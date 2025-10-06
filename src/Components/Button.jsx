@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-function Button({ title, ...props }) {
+function Button({ title, onClick, ...props }) {
 
 
   return (
     <button
       className={`px-[10px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block  ${props.class}`}
+      onClick={onClick}
     >
       {title}
     </button>
