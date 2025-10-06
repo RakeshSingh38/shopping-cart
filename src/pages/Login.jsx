@@ -1,6 +1,6 @@
-import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   const [passwordType, setPasswordType] = useState("password");
@@ -40,17 +40,11 @@ function Login() {
       setLoader(true)
       const response = await axios.post(`https://reqres.in/api/login`, formData)
 
-      const data = await response.data
-
-      if(response.ok){
-        setFormData({
-          email: '',
-          password: ''
-        })
+      if(response.status === 200){
+        setFormData({ email: '', password: '' })
       } 
     } catch (error) {
-      console.log("axios error", error)
-      alert(error.message)
+      alert(error.message || 'Login failed')
     } finally {
       setLoader(false)
     }

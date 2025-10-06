@@ -1,22 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 function Createaccount() {
-  const [passwordType, setPasswordType] = useState("password");
   const [loader, setLoader] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   })
-
-  const handleCheckBox = (e) => {
-    const checkboxValue = e.target.checked;
-    checkboxValue ? setPasswordType("text") : setPasswordType("password");
-  };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,17 +20,11 @@ function Createaccount() {
       setLoader(true)
       const response = await axios.post(`https://reqres.in/api/users`, formData)
 
-      if(response.ok){
-        setFormData({
-          name: "",
-          email: "",
-          password: ""
-        })
-        setLoader(false)
+      if(response.status === 201){
+        setFormData({ name: "", email: "", password: "" })
       }
     } catch (error) {
-      console.log("axios error", error)
-      setLoader(false)
+      alert(error.message || 'Account creation failed')
     } finally {
       setLoader(false)
     }
@@ -107,7 +93,7 @@ function Createaccount() {
               Password
             </label>
             <input
-              type={passwordType}
+              type="password"
               id="pass"
               name="password"
               className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "

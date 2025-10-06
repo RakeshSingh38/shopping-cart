@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { dataContext } from "../context/Productdata";
 
@@ -24,17 +24,6 @@ function Shop() {
   const [categoryTrack, setCategoryTrack] = useState(false);
     const [sortedTrack, setSortedTrack] = useState(true);
     const [activeFilter, setActiveFilter] = useState(false);
-    // useEffect(() => {
-    //   const handleResize = () => {
-    //     setActiveFilter(window.innerWidth <= 1024);
-    //   };
-    //   handleResize();
-    //   window.addEventListener("resize", handleResize);
-    //   return () => {
-    //     window.removeEventListener("resize", handleResize);
-    //   };
-    // }, []);
-    
 
 
     const categoryChange = (e) => {
@@ -210,7 +199,7 @@ function Shop() {
                     {cur.name}
                   </p>
                   <p className="text-red-400 text-xl">
-                    $ {cur.afterDiscountamt}
+                    ₹ {cur.afterDiscountamt}
                   </p>
                 </div>
               </Link>
