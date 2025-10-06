@@ -1,4 +1,3 @@
-import React from "react";
 import useTrendingProducts from "../context/TrendingProduct";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -26,14 +25,14 @@ function Trending() {
                         </div>
                         <div className="w-full">
                             <p className="mt-3 font-medium text-xl leading-none ">{cur.name}</p>
-                            <p className=" text-red-400 text-xl">$ {cur.afterDiscountamt}</p>
+                            <p className=" text-red-400 text-xl">₹ {cur.afterDiscountamt}</p>
                         </div>
                     </Link>
                 </div>
             )
         }
       </div>
-      <button className="mx-auto  uppercase mt-[80px] font-semibold py-[8px] duration-300 ease-linear  hover:bg-black hover:text-white px-[40px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block  " onClick={handleButton}>Load More</button>
+      <button className="mx-auto uppercase mt-[80px] font-semibold duration-300 ease-linear hover:bg-black hover:text-white px-[40px] py-[10px] border-solid border-[2px] border-black text-black rounded-full block" onClick={handleButton}>Load More</button>
     </div>
   );
 }

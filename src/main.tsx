@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App from "./App";
 import "./index.css";
-import Cart from "./context/Cart.jsx";
-import Productdata from "./context/Productdata.jsx";
+import Cart from "./context/Cart";
+import Productdata from "./context/Productdata";
 
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
  
     <Cart>

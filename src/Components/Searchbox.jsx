@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { dataContext } from "../context/Productdata";
 import Skeleton from "react-loading-skeleton";

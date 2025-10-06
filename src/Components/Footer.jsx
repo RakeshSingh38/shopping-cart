@@ -47,7 +47,7 @@ function Footer() {
             <div>
                 <h3 className="font-bold text-xl">SIGN UP TO NEWSLETTER</h3>
                 <p className="mt-1 opacity-90">
-                    Enter your email address to get $10 off your first order and
+                    Enter your email address to get ₹10 off your first order and
                     free shipping. Updates information on Sales and Offers.
                 </p>
                 <form
